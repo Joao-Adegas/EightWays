@@ -1,0 +1,9 @@
+
+
+const BarraNavegacao = () =>{
+    return(
+        <>
+            
+        </>
+    )
+}

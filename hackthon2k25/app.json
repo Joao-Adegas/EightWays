@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "remedios-naturais",
+    "slug": "remedios-naturais",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "remediosnaturais",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
