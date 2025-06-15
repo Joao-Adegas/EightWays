@@ -1,5 +1,3 @@
-![hktn2025](hktn2025.jpg)
-
 **Nome dos integrantes do projeto:**
 
 Gabriela alejandra Bergamini dos santos
