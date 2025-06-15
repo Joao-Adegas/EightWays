@@ -40,7 +40,7 @@ uvicorn main:app --host 0.0.0.0 --port 5000 --reload
 ```
 
 
-## 📝 CRUD de Objetivos
+### 📝 CRUD de Objetivos
 # Criar e ativar ambiente virtual
 ```bash 
 python -m venv env
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-# 🎨 Configuração do Frontend
+### 🎨 Configuração do Frontend
 # Acesse a pasta do frontend via Visual Studio Code
 # Instale as dependências
 ```bash
@@ -75,7 +75,7 @@ npx expo start
 
 *🔹 Observação: Para visualizar o aplicativo, escaneie o QR Code gerado com o aplicativo Expo Go instalado no seu celular 📱.*
 
-# 🚀 Tecnologias Utilizadas
+### 🚀 Tecnologias Utilizadas
 
 🛠 Linguagens de programação: Python, React Native
 
@@ -86,7 +86,7 @@ npx expo start
 🎨 Ferramentas de prototipação: Figma
 
 
-# 🔮 Futuras Implementações
+### 🔮 Futuras Implementações
 
 🏡 Implementar telas individuais para cada remédio natural.
 
@@ -96,7 +96,7 @@ npx expo start
 
 🚀 Realizar o deploy para produção.
 
-# 👩‍💻 Integrantes
+### 👩‍💻 Integrantes
 
 👩 Gabriela Alejandra Bergamine dos Santos - 3º Semestre, SI B
 
@@ -104,7 +104,7 @@ npx expo start
 
 👨 Pedro Sérgio - 3º Semestre, SI B
 
-# 🔗 Links Importantes
+### 🔗 Links Importantes
 
 📹 Vídeo de demonstração (privado): YouTube
 
