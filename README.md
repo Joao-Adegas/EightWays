@@ -23,52 +23,52 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
 ### ⚙️ **Configuração do Backend**
 #### 🤖 **ChatBot**
 
-# Criar e ativar ambiente virtual
+Criar e ativar ambiente virtual
 ```bash
 python -m venv env
 ./env/Scripts/activate
 ```
 
-# Instalar dependências
+Instalar dependências
 ```
 pip install -r requirements.txt
 ```
 
-# Iniciar o servidor
+Iniciar o servidor
 ```
 uvicorn main:app --host 0.0.0.0 --port 5000 --reload
 ```
 
 
 ### 📝 CRUD de Objetivos
-# Criar e ativar ambiente virtual
+Criar e ativar ambiente virtual
 ```bash 
 python -m venv env
 ./env/Scripts/activate
 ```
 
-# Instalar dependências
+Instalar dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-# Iniciar o servidor
+Iniciar o servidor
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### 🎨 Configuração do Frontend
-# Acesse a pasta do frontend via Visual Studio Code
-# Instale as dependências
+Acesse a pasta do frontend via Visual Studio Code
+Instale as dependências
 ```bash
 npm install
 ```
 
 # Ajuste o endereço IP da sua máquina nas chamadas das APIs no frontend
-# Exemplo:
-# http://<SEU_IP>:8000/usuarios/1/objetivos_personalizados/
+ Exemplo:
+ http://<SEU_IP>:8000/usuarios/1/objetivos_personalizados/
 
-# Inicie o projeto
+Inicie o projeto
 ```bash
 npx expo start
 ```
