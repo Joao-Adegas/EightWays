@@ -1,123 +1,111 @@
-**Nome dos integrantes do projeto:**
+# 🌿 **Eight Ways - 8 Caminhos para uma Saúde Melhor** 📱
 
-Gabriela alejandra Bergamini dos santos
-João Pedro dos Santos Adegas
-Pedro Sérgio
+## 🏥 **Sobre o Projeto**
+O **Eight Ways** foi desenvolvido com base nos **8 remédios naturais de Ellen G. White**, promovendo hábitos saudáveis de forma acessível e intuitiva. Nosso projeto consiste em um **aplicativo mobile** 📲 que auxilia os usuários na implementação desses hábitos no dia a dia.
 
-**Link do YouTube privado:**
+### ✨ **Funcionalidades**
+- 🏠 **Página inicial** com divisão dos **8 remédios naturais**.
+- ✅ **Questionário diário** para avaliação do progresso do usuário.
+- 🎯 **Seção "Meus Objetivos"** para acompanhamento e personalização de metas.
+- 🔍 **Área de recomendações** com sugestões de objetivos para cada remédio natural.
+- 🤖 **Chatbot Lumin**, que responde dúvidas sobre os remédios e auxilia no processo de mudança de hábitos.
 
-https://youtu.be/1CYDUh5aLqI
+### 🎨 **Interface**
+Nosso design prioriza a **intuitividade**, com botões visíveis e mensagens de confirmação ✅ para funções essenciais, como exclusão e adição de objetivos.
 
-**Passo a passo para rodar o projeto:**
+## 🛠 **Passo a Passo para Rodar o Projeto**
+### 📌 **Pré-requisitos**
+Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
+- 🐍 **Python** (para os backends)
+- 🚀 **Node.js** e **npm** (para o frontend)
+- 📦 **Bibliotecas** listadas nos arquivos `requirements.txt`
 
-* **Pré-requisitos:** (linguagens de programação, bibliotecas, softwares necessários)
+### ⚙️ **Configuração do Backend**
+#### 🤖 **ChatBot**
 
-Python (para os backends)
-Node.js e npm para frontend
-bibliotecas necessárias listadas nos arquivos requirements.txt
+# Criar e ativar ambiente virtual
+```bash
+python -m venv env
+./env/Scripts/activate
+```
 
-* **Instruções de instalação e configuração:**
-* **Comandos para executar o projeto:**
-* **Quaisquer outras informações relevantes para a execução:**
+# Instalar dependências
+```
+pip install -r requirements.txt
+```
 
-Primeiro para iniciar o projeto devemos iniciar os BackEnd's
-
-Backend - ChatBot
-
-    Criar o ambiente virtual: python -m venv env
-
-    Ativar o ambiente virtual: ./env/Scripts/activate
-
-    Instalar dependências: pip install -r requirements.txt
-
-    Iniciar o servidor: uvicorn main:app --host 0.0.0.0 --port 5000 --reload
-
-Backend - CRUD de Objetivos
-
-    Criar o ambiente virtual: python -m venv env
-
-    Ativar o ambiente virtual: ./env/Scripts/activate
-
-    Instalar dependências: pip install -r requirements.txt
-
-    Iniciar o servidor: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-
-Agora Vamos para iniciar o FrontEnd entre nele pelo Visual Studio Code, abra o terminal e rode o comando:
-
-    npm install - para instalar o Node Modules
-
-Assim que a pasta Node_modules estiver instalada no proejto, rodar o comando:
-
-    IMPORTANTE:
-
-        certifique de ver o ip da sua maquina para rodar o projeto:
-
-        abra o CMD e digite ipconfig
-        o ip da maquina vai aparecer neste formato:
-
-             Endereço IPv4. . . . . . . .  . . . . . . . : 172.20.10.6
-
-        colocar o endereço ip da maquina nas chamadas das APIs no front end:
-
-            exemplo de chamada de api no frontEnd:
-            http://172.20.10.6:8000/usuarios/1/objetivos_personalizados/
-
-            substítua 172.20.10.6 pelo endereço ip da sua maquina.
-
-            FAÇA ISSO COM TODAS AS CHAMADAS DE API NO FRONT END.
-
-            Assim que os endereços ip estiverem corretos e node_modules estiver na pasta, voce deve rodar o projeto com o comando:
-
-            npx expo start
-
-Irá aparecer um QrCode, Você poderá ver nosso aplicativo escaneando o QrCode, porem precisa instalar o aplicativo Expo Go no celular.
+# Iniciar o servidor
+```
+uvicorn main:app --host 0.0.0.0 --port 5000 --reload
+```
 
 
-Detalhe as etapas necessárias para executar o seu projeto. Inclua informações sobre:
+## 📝 CRUD de Objetivos
+# Criar e ativar ambiente virtual
+```bash 
+python -m venv env
+./env/Scripts/activate
+```
+
+# Instalar dependências
+```bash
+pip install -r requirements.txt
+```
+
+# Iniciar o servidor
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+# 🎨 Configuração do Frontend
+# Acesse a pasta do frontend via Visual Studio Code
+# Instale as dependências
+```bash
+npm install
+```
+
+# Ajuste o endereço IP da sua máquina nas chamadas das APIs no frontend
+# Exemplo:
+# http://<SEU_IP>:8000/usuarios/1/objetivos_personalizados/
+
+# Inicie o projeto
+```bash
+npx expo start
+```
+
+*🔹 Observação: Para visualizar o aplicativo, escaneie o QR Code gerado com o aplicativo Expo Go instalado no seu celular 📱.*
+
+# 🚀 Tecnologias Utilizadas
+
+🛠 Linguagens de programação: Python, React Native
+
+📲 Softwares necessários: Expo Go para visualização mobile
+
+📦 Bibliotecas: langchain, langchain-groq, FastAPI, Uvicorn
+
+🎨 Ferramentas de prototipação: Figma
 
 
-linguagens de programação: Python, react-native
-softwares necessários: instalar o Expo Go no celular
-bibliotecas: langchain, langchain-groq , FastApi , Uvicorn. 
+# 🔮 Futuras Implementações
 
+🏡 Implementar telas individuais para cada remédio natural.
 
+🔄 Melhorar atualização em tempo real das funcionalidades.
 
-SOBRE O PROJETO:
+🧐 Refinar o chatbot Lumin para respostas mais precisas.
 
-Eight Ways - 8 caminhos para uma saúde melhor 
+🚀 Realizar o deploy para produção.
 
-Nosso projeto foi desenvolvido com base nos 8 remédios naturais de Ellen G. White.
-Pensando no tema e na proposta que nos foi passada escolhemos desenvolver um app mobile, pois pensamos na facilidade de uso, como o objetivo é que seja algo mais voltado ao dia a dia do usuário um app mobile se torna mais acessível .
-Para tornar esse projeto realidade utilizamos para o front-end , react-native, para o back-end, fast-api, langchain e python, e para prototipação usamos o figma.
-Funcionalidades:
-Nosso app tem as seguintes funcionalidades:
-Na página home temos as divisões dos 8 remédios naturais onde ao acessar cada um deles o usuário tem a possibilidade de ver os objetivos diários associadas àquele remédio, e realizar o preenchimento do formulário de status. Esse formulário funciona da seguinte forma:
-Terão perguntas associadas a hábitos saudáveis para colocar cada um dos 8 remédios naturais em prática no dia a dia
+# 👩‍💻 Integrantes
 
-o usuário deve responder o questionário de preferência diariamente e o app irá retornar um status de como o usuário está indo na implementação dos 8 remédios no seu dia a dia 
+👩 Gabriela Alejandra Bergamine dos Santos - 3º Semestre, SI B
 
-Além disso nosso app tem uma aba de “meus objetivos” e de ‘recomendações’ em recomendações nosso sistema irá recomendar objetivos nos quais o usuário de acordo com sua preferência pode adicionar na sua lista esses exercícios ficam divididos por cada remédio para que fique mais visual para o usuário entender e procurar seus objetivos. Ao adicionar um objetivo de ‘recomendações’ os objetivos já ficam disponíveis na aba “meus objetivos”. O usuário na aba ‘meus objetivos’ também tem a opção de criar objetivos personalizados caso ele deseje, além de poder excluir os objetivos que ele adicionou. A ideia é que os objetivos sejam diários para ajudar o nosso usuário a não procrastinar.
+👨 João Pedro dos Santos Adegas - 3º Semestre, SI B
 
-E por último mas não menos importante temos o Lumin, nosso chatbot. Ele foi treinado para tirar dúvidas do usuário em relação aos 8 remédios naturais, e dar auxílio a ele nessa trajetória de se manter mais saudável.
+👨 Pedro Sérgio - 3º Semestre, SI B
 
-Interface:
-Buscamos deixar nosso app intuitivo, com botões que tem função clara e bem aparentes de forma que seja simples o aprendizado do usuário.
-Colocamos mensagem de confirmação ao realizar funções como  para excluir um objetivo e adicionar um objetivo, para que fique claro quando as funções forem realizadas dentro do nosso app.
+# 🔗 Links Importantes
 
-Futures:
+📹 Vídeo de demonstração (privado): YouTube
 
-Apesar de termos conseguido implementar quase todas as funções que imaginamos para o eight ways e ele ter tomado uma forma da qual ficamos muito felizes,  por conta do tempo não conseguimos refinar e deixar exatamente da forma que queríamos então criamos nossas futures:
-
-Implementar a tela de cada remédio natural a qual é acessada através dos ícones da home
-Refinar algumas funções para ter atualização imediata sem a necessidade de recarregar 
-Refinar funções que precisam de ajustes.
-Refinar o Lumin 
-Tirar o app do cenário de desenvolvimento realizando o deploy.
-
-Integrantes do Grupo:
-
-Gabriela Alejandra Bergamine dos Santos - 3 Semestre - SI B
-João Pedro dos Santos Adegas - 3 Semestre - SI B
-Pedro Sérgio - 3 Semestre - SI B
-*Mais informações acesse [Hackathon 2025 - Unasp Tech](https://www.even3.com.br/hackathon-2025-unasp-tech-540337/)**
-
+🎯 Hackathon 2025 - Unasp Tech: Evento
