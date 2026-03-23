@@ -1,5 +1,7 @@
 # 🌿 **Eight Ways - 8 Caminhos para uma Saúde Melhor** 📱
 
+![demo](./assets/gif.gif)
+
 ## 🏥 **Sobre o Projeto**
 O **Eight Ways** foi desenvolvido com base nos **8 remédios naturais de Ellen G. White**, promovendo hábitos saudáveis de forma acessível e intuitiva. Nosso projeto consiste em um **aplicativo mobile** 📲 que auxilia os usuários na implementação desses hábitos no dia a dia.
 
