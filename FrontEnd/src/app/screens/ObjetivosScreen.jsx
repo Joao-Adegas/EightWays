@@ -38,7 +38,7 @@ const ObjetivosScreen = ({ navigation, route }) => {
         for (const remedio of remediosNaturais) {
           try {
             const response = await axios.get(
-              `http://172.20.10.6:8000/objetivos/${remedio.categoria}`
+              `http://localhost:8000/objetivos/${remedio.categoria}`
             );
             allObjetivos[remedio.categoria] = response.data || [];
           } catch (error) {
@@ -69,7 +69,7 @@ const ObjetivosScreen = ({ navigation, route }) => {
 
     try {
         const response = await axios.post(
-            "http://172.20.10.6:8000/objetivos_usuario/",
+            "http://localhost:8000/objetivos_usuario/",
             {
                 user_id: 1,
                 objetivo_id: objetivo.id,

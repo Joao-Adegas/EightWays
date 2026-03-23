@@ -2,7 +2,20 @@ from fastapi import FastAPI, HTTPException
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_groq import ChatGroq
+import os
+from dotenv import load_dotenv
 
+
+app = FastAPI()
+
+load_dotenv()
+api_key = os.getenv("api_key")
+os.environ["GROQ_API_KEY"] = api_key
+mensagens = []
+
+chat = ChatGroq(model="llama-3.3-70b-versatile")
 app = FastAPI()
 
 # Configuração do CORS
@@ -72,7 +85,7 @@ async def listar_objetivos_por_categoria(categoria: str):
         raise HTTPException(status_code=404, detail=f"Nenhum objetivo encontrado na categoria '{categoria}'")
     return jsonable_encoder(objetivos_filtrados)
 
-@app.get("/objetivos_usuario/")
+@app.get("/objetivos_usuario")
 async def listar_objetivos_usuario():
     lista_completa = []
 
@@ -106,7 +119,7 @@ async def listar_objetivos_usuario():
 
 
 
-@app.post("/usuarios/{user_id}/objetivos_personalizados/")
+@app.post("/usuarios/{user_id}/objetivos_personalizados")
 async def criar_objetivo_personalizado(user_id: int, objetivo: ObjetivoPersonalizado):
     if not any(user["id"] == user_id for user in usuarios):
         raise HTTPException(status_code=404, detail="Usuário não encontrado")
@@ -137,7 +150,7 @@ async def criar_objetivo_personalizado(user_id: int, objetivo: ObjetivoPersonali
         "relacao": nova_relacao
     }
 
-@app.post("/objetivos_usuario/")
+@app.post("/objetivos_usuario")
 async def adicionar_objetivo_usuario(objetivo_usuario: ObjetivoUsuario):
     # Verifica se o objetivo existe
     objetivo = None
@@ -168,6 +181,39 @@ async def deletar_objetivo_usuario(relacao_id: int):
     objetivos_usuario = [rel for rel in objetivos_usuario if rel["id"] != relacao_id]
     return {"message": "Objetivo removido da lista do usuário"}
 
+
+class InputData(BaseModel):
+    pergunta: str
+
+
+def resposta_bot(msg):
+    mensagens_modelo = [("system","Você é um especialista nos 8 remédios naturais e response perguntas relacionadas a eles.")]
+    mensagens_modelo += msg
+    template = ChatPromptTemplate.from_messages(mensagens_modelo)
+    chain = template | chat 
+    return chain.invoke({}).content
+
+
+@app.post("/pergunta")
+def gerar_resposta(dados:InputData):
+    global mensagens
+    
+    # Adiciona a pergunta do usuário ao histórico
+    mensagens.append({"role": "user", "content": dados.pergunta})
+
+    # Gera resposta do bot
+    resposta = resposta_bot(mensagens)
+
+    # Adiciona resposta ao histórico
+    mensagens.append({"role": "assistant", "content": resposta})
+
+    return {"resposta": resposta}
+
+
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=5000, reload=True)
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)

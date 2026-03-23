@@ -21,7 +21,7 @@ const ListaObjetivosUsuario = () => {
     const fetchObjetivosUsuario = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://172.20.10.6:8000/objetivos_usuario/');
+            const response = await axios.get('http://localhost:8000/objetivos_usuario/');
             
             console.log("Dados da API:", response.data); 
     
@@ -72,7 +72,7 @@ const ListaObjetivosUsuario = () => {
 
     const removerObjetivo = async (objetivoId) => {
         try {
-            await axios.delete(`http://172.20.10.6:8000/objetivos_usuario/${objetivoId}`);
+            await axios.delete(`http://localhost:8000/objetivos_usuario/${objetivoId}`);
 
        
             setObjetivosUsuario(prev => {
@@ -109,7 +109,7 @@ const ListaObjetivosUsuario = () => {
     const handleAdicionarObjetivo = async (novoObjetivo) => {
         try {
             const response = await axios.post(
-                `http://172.20.10.6:8000/usuarios/1/objetivos_personalizados/`,
+                `http://localhost:8000/usuarios/1/objetivos_personalizados/`,
                 {
                     titulo: novoObjetivo.titulo,
                     categoria: categoriaSelecionada,
